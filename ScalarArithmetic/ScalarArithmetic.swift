@@ -51,20 +51,20 @@ protocol ScalarFloatingPointType {
 extension CGFloat : ScalarFloatingPointType, FloatingPointMathType {
   var toDouble:Double  { return Double(self)      }
   var abs:CGFloat      { return self.abs  }
-  var acos:CGFloat     { return Darwin.acos(self) }
-  var asin:CGFloat     { return Darwin.asin(self) }
-  var atan:CGFloat     { return Darwin.atan(self) }
-  func atan2(x:CGFloat) -> CGFloat { return Darwin.atan2(self, x) }
-  var cos:CGFloat      { return Darwin.cos(self)  }
-  var sin:CGFloat      { return Darwin.sin(self)  }
-  var tan:CGFloat      { return Darwin.tan(self)  }
-  var exp:CGFloat      { return Darwin.exp(self)  }
-  var exp2:CGFloat     { return Darwin.exp2(self) }
-  var log:CGFloat      { return Darwin.log(self)  }
-  var log10:CGFloat    { return Darwin.log10(self)}
-  var log2:CGFloat     { return Darwin.log2(self)}
-  func pow(exponent:CGFloat)-> CGFloat { return Darwin.pow(self, exponent) }
-  var sqrt:CGFloat     { return Darwin.sqrt(self) }
+  var acos:CGFloat     { return CoreGraphics.acos(self) }
+  var asin:CGFloat     { return CoreGraphics.asin(self) }
+  var atan:CGFloat     { return CoreGraphics.atan(self) }
+  func atan2(x:CGFloat) -> CGFloat { return CoreGraphics.atan2(self, x) }
+  var cos:CGFloat      { return CoreGraphics.cos(self)  }
+  var sin:CGFloat      { return CoreGraphics.sin(self)  }
+  var tan:CGFloat      { return CoreGraphics.tan(self)  }
+  var exp:CGFloat      { return CoreGraphics.exp(self)  }
+  var exp2:CGFloat     { return CoreGraphics.exp2(self) }
+  var log:CGFloat      { return CoreGraphics.log(self)  }
+  var log10:CGFloat    { return CoreGraphics.log10(self)}
+  var log2:CGFloat     { return CoreGraphics.log2(self)}
+  func pow(exponent:CGFloat)-> CGFloat { return CoreGraphics.pow(self, exponent) }
+  var sqrt:CGFloat     { return CoreGraphics.sqrt(self) }
   func __conversion() -> Double { return Double(self) }
 }
 
