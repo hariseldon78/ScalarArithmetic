@@ -42,10 +42,13 @@ extension Double :  FloatingPointMathType {
 }
 
 
+protocol Number {
+	var toDouble:Double { get }
+	init(_ value:Double)
 
-protocol ScalarFloatingPointType {
-  var toDouble:Double { get }
-  init(_ value:Double)
+}
+
+protocol ScalarFloatingPointType:Number {
 }
 
 extension CGFloat : ScalarFloatingPointType, FloatingPointMathType {
